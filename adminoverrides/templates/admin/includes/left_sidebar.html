@@ -1,7 +1,7 @@
 {% load i18n admin_static %}
 <div id="left_sidebar">
 	<ul class="available_apps">
-		<li class="app nosub"><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+		<li class="app"><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
 		{% for app in available_apps %}
 			{% if app.has_module_perms %}
 				<li class="app {% if app.app_url in request.path %}active{% endif %}"><a href="{{ app.app_url }}">{% firstof app.name app.app_label %}</a>
@@ -13,5 +13,6 @@
 				</li>
 			{% endif %}
 		{% endfor %}
+		{% include "admin/includes/custom_routes.html" %}
 	</ul>
 </div>
