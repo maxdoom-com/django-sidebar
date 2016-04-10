@@ -13,3 +13,8 @@ the template "admin/base.html".
 ## Tested with
 
 - Django 1.9.5
+
+## Licensing
+
+- None. I don't mind.
+- No warranties at all!
