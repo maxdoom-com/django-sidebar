@@ -1,0 +1,17 @@
+{% load i18n admin_static %}
+<div id="left_sidebar">
+	<ul class="available_apps">
+		<li class="app nosub"><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+		{% for app in available_apps %}
+			{% if app.has_module_perms %}
+				<li class="app {% if app.app_url in request.path %}active{% endif %}"><a href="{{ app.app_url }}">{% firstof app.name app.app_label %}</a>
+					<ul class="models">
+						{% for model in app.models %}
+							<li class="model {% if app.app_url in request.path %}active{% endif %}"><a href="{{ model.admin_url }}">{{ model.object_name }}</a></li>
+						{% endfor %}
+					</ul>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+</div>

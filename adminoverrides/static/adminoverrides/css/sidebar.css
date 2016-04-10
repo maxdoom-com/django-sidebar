@@ -1,0 +1,25 @@
+#content {
+    float: left;
+    margin-left: 250px;
+}
+
+#left_sidebar {
+    float: left;
+    height: 100%;
+    background: #f8f8f8;
+    position: absolute;
+    width: 250px;
+}
+
+.app > ul {
+	display: none;
+}
+.app.active > ul {
+	display: block;
+}
+
+.model {
+}
+.model.active {
+}
+
